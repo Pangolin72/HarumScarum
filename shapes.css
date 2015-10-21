@@ -1,0 +1,191 @@
+#square {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+
+#rectangle {
+	width: 150px;
+	height: 100px;
+	background: red;
+}
+
+#circle {
+	width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border=radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#oval {
+	width: 200px;
+	height: 100px;
+	background: red;
+	moz-border-radius: 100px/50px;
+	webkit-border-radius: 100px/50px;
+	border-radius: 100px/50px;
+}
+
+#triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid red;
+}
+
+#triangle-down {
+	width: 0;
+	height: 0;
+	border-top: 100px solid red;
+	border-right: 50px solid transparent;
+	border-left: 50px solid transparent;
+}
+
+#triangle-topleft {
+	width: 0;
+	height: 0;
+	border-left: 50px solid green;
+	border-top: 50px solid red;
+	border-bottom: 50px solid transparent;
+	border-right: 50px solid transparent;
+}
+
+#star-six {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid red;
+	position: relative;
+}
+
+#star-six:after {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid red;
+	position: absolute;
+	content: "";
+	top: 30px;
+	left: -100px;
+}
+
+#burst-one {
+	width: 0px;
+	height: 0px;
+	border-left: 100px solid red;
+	border-right: 70px solid red;
+	border-top: 50px solid transparent;
+	border-bottom: 75px solid transparent;
+	position: relative;
+	-webkit-transform: rotate(20deg);
+	/*background: blue;*/
+}
+
+@keyframes example-two {
+	from {-webkit-transform: rotate(0deg)}
+	/*25% {-webkit-transform: rotate(90deg)}
+	50% {-webkit-transform: rotate(180deg)}
+	75% {-webkit-transform: rotate(270deg)}*/
+	to {-webkit-transform: rotate(360deg)}
+}	
+#burst-one:after {
+	width: 0;
+	height: 0;
+
+	border-left: 200px solid transparent;
+	border-right: 105px solid transparent;
+	border-top: 100px solid blue;
+	position: absolute;
+	left: -200px;
+	top: -20px;
+	content: "";
+	-webkit-transform: rotate(-20deg);
+	animation-name: example-two;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	animation-timing-function: linear;
+}
+
+@keyframes example {
+	from {border-bottom-color: green;}
+	to {border-bottom-color: cyan;}
+}
+@keyframes expand {
+	from {transform: scale(1, 1)}
+	to {transform: scale(3, 3)}
+}
+
+@keyframes leftright {
+	from {padding-left: 20px}
+	to {padding-left: 200px }
+}
+
+@keyframes shake {
+	from {-webkit-transform: rotate(-10deg)}
+	to	{-webkit-transform: rotate(5deg)}
+}
+
+@keyframes shading {
+	from {background-color: orange}
+	to {background-color: pink}
+	to {background-color: tomato}
+}
+
+.slidey {
+	animation: shake infinite .7s cubic-bezier(.2, .3, .4, .5);
+	/**/
+}
+
+.twisty {
+	animation: leftright infinite 1s alternate cubic-bezier(.8,.55,1,0)
+}
+
+#expanding-circle {
+	width: 30px;
+	height: 30px;
+	background: blue;
+	border: 10px solid red;
+	border-radius: 50%;
+	animation-name: expand;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: alternate;
+	transform-origin: center;
+	position: relative;
+}
+
+#burst-one:before {
+	width: 0;
+	height: 0;
+	border-bottom: 120px solid green;
+	border-left: 120px solid transparent;
+	border-right: 200px solid transparent;
+	position: absolute;
+	left: -120px;
+	top: -90px;
+	-webkit-transform: rotate(-20deg);
+	content: "";
+	animation-name: example;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+/*#burst-one:after {
+	width: 0;
+	height: 0;
+	border-right: 200px solid red;
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent;
+	position: absolute;
+	left: -50px;
+	top: -50px;
+	content: "";
+}*/
